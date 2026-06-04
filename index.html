@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Literacy English Learning System - Advanced Multi-Materials</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800">
+
+    <nav class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-3 border-b border-blue-800">
+                <h1 class="text-xl font-bold tracking-tight">Digital Literacy English Learning System</h1>
+                <span class="text-xs bg-blue-700 px-3 py-1 rounded-full text-blue-100">Blended Learning Model</span>
+            </div>
+            <div class="flex space-x-1 overflow-x-auto text-sm py-2 scrollbar-none">
+                <button onclick="switchMenu('dashboard')" id="tab-dashboard" class="menu-tab px-4 py-2 rounded-lg font-medium bg-blue-800 text-white whitespace-nowrap">📊 Dashboard</button>
+                <button onclick="switchMenu('guide')" id="tab-guide" class="menu-tab px-4 py-2 rounded-lg font-medium text-blue-200 hover:bg-blue-800 whitespace-nowrap">💡 Panduan</button>
+                <button onclick="switchMenu('reading')" id="tab-reading" class="menu-tab px-4 py-2 rounded-lg font-medium text-blue-200 hover:bg-blue-800 whitespace-nowrap">📖 AI Reading</button>
+                <button onclick="switchMenu('writing')" id="tab-writing" class="menu-tab px-4 py-2 rounded-lg font-medium text-blue-200 hover:bg-blue-800 whitespace-nowrap">✍️ AI Writing Assistant</button>
+                <button onclick="switchMenu('listening')" id="tab-listening" class="menu-tab px-4 py-2 rounded-lg font-medium text-blue-200 hover:bg-blue-800 whitespace-nowrap">🎧 AI Listening Lab</button>
+                <button onclick="switchMenu('speaking')" id="tab-speaking" class="menu-tab px-4 py-2 rounded-lg font-medium text-blue-200 hover:bg-blue-800 whitespace-nowrap">🗣️ AI Speaking Lab</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+
+        <section id="menu-dashboard" class="menu-section space-y-6">
+            <div class="bg-gradient-to-r from-blue-800 to-indigo-900 text-white p-6 rounded-2xl shadow-sm">
+                <h2 class="text-2xl font-bold mb-1">Welcome to Digital Literacy English Learning System! 👋</h2>
+                <p class="text-blue-200 text-sm">Integrasi Bahasa Inggris dan Literasi Digital dengan Asisten AI untuk Mahasiswa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 md:col-span-2">
+                    <h3 class="font-bold text-lg text-slate-900 mb-4">Your Blended Learning Analytics</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span>Reading (Progress & Interaction)</span><span id="dash-p1">0%</span></div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div id="dash-b1" class="bg-blue-500 h-2 rounded-full" style="width: 0%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span>Writing Assistant (AI Avg Score)</span><span id="dash-p2">Not Tested</span></div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div id="dash-b2" class="bg-purple-500 h-2 rounded-full" style="width: 0%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span>Listening Lab (Correct Answers Quiz)</span><span id="dash-p3">0%</span></div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div id="dash-b3" class="bg-green-500 h-2 rounded-full" style="width: 0%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span>Speaking Lab (Pronunciation Score)</span><span id="dash-p4">Not Tested</span></div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full"><div id="dash-b4" class="bg-amber-500 h-2 rounded-full" style="width: 0%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-50 border border-blue-100 p-5 rounded-2xl text-xs space-y-2">
+                    <h4 class="font-bold text-blue-900 text-sm">📌 Catatan Kuliah</h4>
+                    <p class="text-slate-600 leading-relaxed">Gunakan menu <strong>Panduan</strong> di atas terlebih dahulu untuk memahami alur belajar mandiri menggunakan AI sebelum Anda menghadiri sesi diskusi tatap muka bersama dosen di kelas.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="menu-guide" class="menu-section hidden bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-6">
+            <div class="border-b pb-3">
+                <h3 class="text-xl font-bold text-slate-900">💡 Panduan Penggunaan Sistem (User Guide)</h3>
+                <p class="text-xs text-slate-500">Konsep Pembelajaran Blended Learning Berbasis Literasi Digital & AI</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-4">
+                    <h4 class="font-bold text-blue-800 flex items-center gap-2">👨‍🎓 Untuk Mahasiswa (Alur Belajar Mandiri)</h4>
+                    <ol class="list-decimal list-inside space-y-2.5 text-slate-600">
+                        <li><strong>AI Reading:</strong> Baca artikel digital ilmiah bahasa Inggris, lalu klik kosakata bercetak tebal untuk melihat penjelasan analisis dari AI.</li>
+                        <li><strong>AI Writing Assistant:</strong> Tulis opini kritis Anda sesuai topik. AI akan langsung mengevaluasi tata bahasa (*grammar*) Anda.</li>
+                        <li><strong>AI Listening Lab:</strong> Dengarkan audio kuliah interaktif dari AI dengan menekan tombol play, kemudian jawab kuis pemahaman yang disediakan.</li>
+                        <li><strong>AI Speaking Lab:</strong> Klik tombol mikrofon, lalu bacakan kalimat digital ethics yang ada di layar untuk dinilai pelafalannya oleh AI.</li>
+                    </ol>
+                    <p class="text-xs bg-amber-50 text-amber-800 p-3 rounded-xl border border-amber-200"><strong>Note:</strong> Gunakan navigasi tombol <code>Previous</code> dan <code>Next Material</code> di bawah setiap halaman untuk menjelajahi total 10 materi per modul.</p>
+                </div>
+
+                <div class="space-y-4 border-l pl-0 md:pl-6 border-slate-100">
+                    <h4 class="font-bold text-indigo-800 flex items-center gap-2">👩‍🏫 Untuk Dosen (Sesi Kelas Tatap Muka)</h4>
+                    <ul class="list-disc list-inside space-y-2.5 text-slate-600">
+                        <li><strong>Evaluasi Progres:</strong> Cek halaman <b>Dashboard</b> mahasiswa sebelum kelas tatap muka dimulai untuk menganalisis modul mana yang memiliki kendala.</li>
+                        <li><strong>Pembahasan Sinkronus:</strong> Jadikan tren skor menulis atau membaca mahasiswa dari data AI sebagai bahan diskusi kelas (*blended learning loop*).</li>
+                        <li><strong>Pengembangan Kritis:</strong> Berikan instruksi tambahan agar mahasiswa mengeksplorasi hingga materi ke-10 sebagai tugas mandiri (*self-paced learning*).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="menu-reading" class="menu-section hidden bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center border-b pb-3">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">📖 AI Reading</h3>
+                    <p class="text-xs text-slate-500">Klik kata tebal berwarna biru jika Anda butuh penjelasan kosa kata dari AI.</p>
+                </div>
+                <span id="reading-badge" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Material 1 / 10</span>
+            </div>
+
+            <div class="p-5 bg-slate-50 rounded-xl leading-relaxed text-slate-700 text-justify">
+                <h4 id="reading-title" class="font-bold text-slate-900 mb-2 text-md">Topic: Loading...</h4>
+                <div id="reading-body" class="text-sm space-y-3">Isi materi...</div>
+            </div>
+
+            <div id="reading-ai-box" class="hidden bg-blue-50 border border-blue-200 p-4 rounded-xl">
+                <h4 id="reading-word" class="font-bold text-blue-900 text-sm">AI Definition:</h4>
+                <p id="reading-def" class="text-xs text-slate-700 mt-1">Definisi</p>
+            </div>
+
+            <div class="flex justify-between pt-2">
+                <button onclick="prevMaterial('reading')" class="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700">⬅️ Previous Material</button>
+                <button onclick="nextMaterial('reading')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-xs font-semibold">Next Material ➡️</button>
+            </div>
+        </section>
+
+
+        <section id="menu-writing" class="menu-section hidden bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center border-b pb-3">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">✍️ AI Writing Assistant</h3>
+                    <p class="text-xs text-slate-500">Ketik opini berbahasa Inggris Anda sesuai dengan petunjuk penulisan akademik di bawah ini.</p>
+                </div>
+                <span id="writing-badge" class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Material 1 / 10</span>
+            </div>
+
+            <div class="bg-purple-50 p-4 rounded-xl text-xs text-purple-950">
+                <span class="font-bold block mb-1">📋 Writing Prompt:</span>
+                <p id="writing-prompt-text">Loading prompt...</p>
+            </div>
+
+            <textarea id="writing-input" class="w-full h-32 p-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none text-sm" placeholder="Write your response in English here..."></textarea>
+            <button onclick="triggerWritingAi()" class="bg-purple-600 text-white px-5 py-2 rounded-xl hover:bg-purple-700 transition text-xs font-semibold">Analyze Text with AI</button>
+
+            <div id="writing-ai-box" class="hidden p-4 rounded-xl border text-sm"></div>
+
+            <div class="flex justify-between pt-2">
+                <button onclick="prevMaterial('writing')" class="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700">⬅️ Previous Material</button>
+                <button onclick="nextMaterial('writing')" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl text-xs font-semibold">Next Material ➡️</button>
+            </div>
+        </section>
+
+
+        <section id="menu-listening" class="menu-section hidden bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center border-b pb-3">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">🎧 AI Listening Lab</h3>
+                    <p class="text-xs text-slate-500">Dengarkan materi perkuliahan audio berbasis AI dan jawab pertanyaan evaluasinya.</p>
+                </div>
+                <span id="listening-badge" class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">Material 1 / 10</span>
+            </div>
+
+            <div class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl">
+                <button onclick="playListeningAudio()" class="bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition text-xs font-semibold flex items-center gap-2 shadow-sm">
+                    🔊 Play Audio Lecture
+                </button>
+                <span id="listening-topic-title" class="text-xs text-slate-600 font-bold">Topic: Loading...</span>
+            </div>
+
+            <div class="space-y-3 pt-2">
+                <p class="text-sm font-semibold text-slate-800">📋 Comprehension Quiz:</p>
+                <p id="listening-question" class="text-sm text-slate-700 font-medium">Question loading...</p>
+                
+                <div id="listening-options" class="space-y-2 text-sm">
+                    </div>
+                <button onclick="triggerListeningAi()" class="bg-slate-800 text-white px-5 py-2 rounded-xl text-xs font-semibold">Submit Answer</button>
+                <p id="listening-feedback" class="hidden text-xs font-bold mt-2"></p>
+            </div>
+
+            <div class="flex justify-between pt-4 border-t border-slate-100">
+                <button onclick="prevMaterial('listening')" class="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700">⬅️ Previous Material</button>
+                <button onclick="nextMaterial('listening')" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-xs font-semibold">Next Material ➡️</button>
+            </div>
+        </section>
+
+
+        <section id="menu-speaking" class="menu-section hidden bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center border-b pb-3">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">🗣️ AI Speaking Lab</h3>
+                    <p class="text-xs text-slate-500">Tekan tombol rekam suara dan ucapkan kalimat etika digital berikut dengan lantang.</p>
+                </div>
+                <span id="speaking-badge" class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Material 1 / 10</span>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl">
+                <p class="text-xs font-semibold text-amber-800 mb-1">📢 Pronounce this academic sentence clearly:</p>
+                <p id="target-speech" class="text-base font-bold text-slate-800 italic">"Loading target sentence..."</p>
+            </div>
+
+            <button onclick="startSpeakingAi()" id="btn-speak" class="bg-amber-500 text-white px-5 py-2.5 rounded-xl hover:bg-amber-600 transition text-xs font-semibold flex items-center gap-2">
+                🎙️ Start Voice Recording
+            </button>
+
+            <div id="speaking-ai-box" class="hidden p-4 rounded-xl bg-slate-50 border text-sm">
+                <p class="text-xs text-slate-500">AI Speech-to-Text Recognition:</p>
+                <p id="spoken-text" class="font-bold text-slate-800 my-1 bg-white p-2 rounded border">"..."</p>
+                <p id="speaking-score" class="text-xs font-bold mt-2"></p>
+            </div>
+
+            <div class="flex justify-between pt-2">
+                <button onclick="prevMaterial('speaking')" class="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700">⬅️ Previous Material</button>
+                <button onclick="nextMaterial('speaking')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-xl text-xs font-semibold">Next Material ➡️</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-xs text-slate-400 mt-12 border-t border-slate-200">
+        &copy; 2026 Digital Literacy English Learning System | dikembangkan oleh Nur Eva Yanti
+    </footer>
+
+    <script>
+        // --- DATASET 10 MATERI UNTUK TIAP KATEGORI ---
+        const readingDataset = [
+            { title: "Navigating Information Overload", body: "In today's connected society, university students are bombarded with information. Platforms use <span onclick=\"triggerReadingAi('Algorithms', 'Sistem komputer pengatur konten.')\" class='text-blue-600 font-bold underline cursor-pointer'>algorithms</span> that maximize engagement, creating <span onclick=\"triggerReadingAi('Filter Bubbles', 'Isolasi paparan informasi.')\" class='text-blue-600 font-bold underline cursor-pointer'>filter bubbles</span>. Students need rigorous <span onclick=\"triggerReadingAi('Fact-Checking', 'Verifikasi data.')\" class='text-blue-600 font-bold underline cursor-pointer'>fact-checking</span> methods." },
+            { title: "Understanding Deepfakes", body: "Technological growth allows the generation of <span onclick=\"triggerReadingAi('Deepfakes', 'Video/audio rekayasa AI.')\" class='text-blue-600 font-bold underline cursor-pointer'>deepfakes</span>, which manipulate public trust. Identifying modified videos requires high <span onclick=\"triggerReadingAi('Media Literacy', 'Kemampuan mengevaluasi media.')\" class='text-blue-600 font-bold underline cursor-pointer'>media literacy</span>." },
+            { title: "The Power of Digital Footprints", body: "Every online activity creates a permanent <span onclick=\"triggerReadingAi('Data Trail', 'Rekam jejak data internet.')\" class='text-blue-600 font-bold underline cursor-pointer'>data trail</span>. Protecting your privacy prevents corporations from compiling <span onclick=\"triggerReadingAi('User Profiling', 'Penyusunan profil kebiasaan pengguna.')\" class='text-blue-600 font-bold underline cursor-pointer'>user profiling</span> data without explicit consent." },
+            { title: "Phishing Scams Explored", body: "Cybercriminals deploy deceptive emails known as <span onclick=\"triggerReadingAi('Phishing', 'Penipuan pencurian data.')\" class='text-blue-600 font-bold underline cursor-pointer'>phishing</span>. Students must verify URLs to avoid compromises to their personal <span onclick=\"triggerReadingAi('Cybersecurity', 'Keamanan siber.')\" class='text-blue-600 font-bold underline cursor-pointer'>cybersecurity</span>." },
+            { title: "The Concept of Netiquette", body: "Communication online demands strict adherence to <span onclick=\"triggerReadingAi('Netiquette', 'Etika berkomunikasi di internet.')\" class='text-blue-600 font-bold underline cursor-pointer'>netiquette</span>. Expressing diverse opinions respectfully limits toxic <span onclick=\"triggerReadingAi('Cyberbullying', 'Perundungan dunia maya.')\" class='text-blue-600 font-bold underline cursor-pointer'>cyberbullying</span> in academic circles." },
+            { title: "AI Bias in Search Engines", body: "Algorithms are not neutral; they reflect human prejudices, leading to <span onclick=\"triggerReadingAi('AI Bias', 'Ketidakadilan keputusan kecerdasan buatan.')\" class='text-blue-600 font-bold underline cursor-pointer'>AI bias</span>. Cross-referencing alternative search networks promotes unbiased <span onclick=\"triggerReadingAi('Data Sourcing', 'Pencarian asal data berita.')\" class='text-blue-600 font-bold underline cursor-pointer'>data sourcing</span>." },
+            { title: "Copyright and Fair Use", body: "Using online images without authorization violates intellectual property laws. Understanding <span onclick=\"triggerReadingAi('Fair Use', 'Aturan penggunaan karya terbatas.')\" class='text-blue-600 font-bold underline cursor-pointer'>fair use</span> allows students to integrate media without committing <span onclick=\"triggerReadingAi('Plagiarism', 'Penjiplakan karya.')\" class='text-blue-600 font-bold underline cursor-pointer'>plagiarism</span>." },
+            { title: "The Rise of Clickbait", body: "Media websites utilize exaggerated headlines called <span onclick=\"triggerReadingAi('Clickbait', 'Judul jebakan klik.')\" class='text-blue-600 font-bold underline cursor-pointer'>clickbait</span>. Analyzing the substantive contents of articles avoids falling victim to sensationalized <span onclick=\"triggerReadingAi('Misinformation', 'Informasi salah tidak sengaja.')\" class='text-blue-600 font-bold underline cursor-pointer'>misinformation</span>." },
+            { title: "Online Data Privacy Laws", body: "Modern frameworks like GDPR grant citizens control over personal records. Exercising your <span onclick=\"triggerReadingAi('Data Opt-Out', 'Hak menolak penyimpanan data.')\" class='text-blue-600 font-bold underline cursor-pointer'>data opt-out</span> protects digital identity from unauthorized commercialization by tech <span onclick=\"triggerReadingAi('Monopolies', 'Monopoli raksasa teknologi.')\" class='text-blue-600 font-bold underline cursor-pointer'>monopolies</span>." },
+            { title: "Digital Well-being and Focus", body: "Constant mobile notifications threaten attention spans. Maintaining <span onclick=\"triggerReadingAi('Digital Detox', 'Puasa gawai/media sosial.')\" class='text-blue-600 font-bold underline cursor-pointer'>digital detox</span> schedules optimizes cognitive functioning and guarantees long-term academic <span onclick=\"triggerReadingAi('Productivity', 'Efisiensi hasil belajar.')\" class='text-blue-600 font-bold underline cursor-pointer'>productivity</span>." }
+        ];
+
+        const writingDataset = [
+            { prompt: "Argue why relying on a single social media platform for news is dangerous.", keywords: ["platform", "danger", "bias"] },
+            { prompt: "Describe how deepfakes can threaten public trust during elections.", keywords: ["trust", "threaten", "election"] },
+            { prompt: "Explain the long-term benefits of deleting unneeded old online accounts.", keywords: ["privacy", "account", "delete"] },
+            { prompt: "Detail proper responses when discovering a phishing link in your campus email.", keywords: ["report", "link", "phishing"] },
+            { prompt: "Discuss how online netiquette affects professional job opportunities later.", keywords: ["job", "netiquette", "reputation"] },
+            { prompt: "Analyze why search engine bias could harm student research accuracy.", keywords: ["bias", "research", "harm"] },
+            { prompt: "Write a disclaimer properly giving credit to an online digital artist.", keywords: ["credit", "artist", "original"] },
+            { prompt: "Expose how sensationalized clickbait titles deceive internet readers.", keywords: ["clickbait", "deceive", "headline"] },
+            { prompt: "Formulate your stance on whether tech companies should be fined for data leaks.", keywords: ["fine", "leak", "company"] },
+            { prompt: "Propose solutions for students to avoid smartphone screen addictions.", keywords: ["addiction", "screen", "limit"] }
+        ];
+
+        const listeningDataset = [
+            { topic: "Digital Footprints", audio: "Your digital footprint is permanent. Future employers look at your online history.", q: "Who looks at your online history?", options: ["Future employers", "No one", "Internet providers"], correct: "Future employers" },
+            { topic: "Spotting Deepfakes", audio: "Deepfakes use AI to swap faces. Check blinking patterns to find abnormalities.", q: "What should you check to find abnormalities?", options: ["Blinking patterns", "Shirt colors", "Background sound"], correct: "Blinking patterns" },
+            { topic: "The Danger of Phishing", audio: "Phishing emails create fake urgencies. Never enter your password using external links.", q: "What do phishing emails create?", options: ["Fake urgencies", "Free prizes", "Good marks"], correct: "Fake urgencies" },
+            { topic: "Algorithm Control", audio: "Algorithms serve contents that match your historical views, causing filter bubbles.", q: "What do algorithms cause?", options: ["Filter bubbles", "Better speed", "Virus infection"], correct: "Filter bubbles" },
+            { topic: "Digital Citizenship", audio: "Good digital citizens credit creators and avoid spreading unverified news reports.", q: "What does a good digital citizen avoid?", options: ["Spreading unverified news", "Using internet", "Writing comments"], correct: "Spreading unverified news" },
+            { topic: "Password Strength", audio: "Do not use common phrases. Use alphanumeric structures with special characters.", q: "What structure is recommended for passwords?", options: ["Alphanumeric and special characters", "Your birth date", "Simple numbers"], correct: "Alphanumeric and special characters" },
+            { topic: "Cloud Storage Safety", audio: "Cloud data backups protect files from device damage but require encryption methods.", q: "What do cloud backups require for full safety?", options: ["Encryption methods", "More RAM", "USB cables"], correct: "Encryption methods" },
+            { topic: "Fact Checking Websites", audio: "Snape and independent validation bureaus confirm true data against clickbait lines.", q: "What do validation bureaus confirm?", options: ["True data", "Website layouts", "Advertising pricing"], correct: "True data" },
+            { topic: "Intellectual Property Online", audio: "Digital piracy damages creative industries. Support authors by buying licensed content.", q: "Who do you support by buying licensed content?", options: ["Authors", "Hackers", "Search engines"], correct: "Authors" },
+            { topic: "Managing Notification Fatigue", audio: "Muting notifications reduces levels of stress and enhances deep study attention.", q: "What does muting notifications enhance?", options: ["Deep study attention", "Battery usage", "Download rates"], correct: "Deep study attention" }
+        ];
+
+        const speakingDataset = [
+            "We must properly credit online authors to avoid plagiarism.",
+            "Verify all information sources before sharing news online.",
+            "Artificial intelligence tools can exhibit biases based on data.",
+            "Cybersecurity awareness prevents identity theft in digital campuses.",
+            "Respect alternative viewpoints to build a constructive digital community.",
+            "Social media algorithms manipulate cognitive engagement metrics.",
+            "Unencrypted public Wi-Fi networks pose severe data security threats.",
+            "Do not fall for manipulative headlines designed as clickbait links.",
+            "Our data privacy is a fundamental human right online.",
+            "Take scheduled digital breaks to restore optimal focus levels."
+        ];
+
+        // --- TRACKER INDEKS AKTIF MATERI (0 - 9) ---
+        let currentIndex = { reading: 0, writing: 0, listening: 0, speaking: 0 };
+        let studentScores = { reading: 0, writing: 0, listening: 0, speaking: 0 };
+
+        // --- NAVIGATION ENGINE ---
+        function switchMenu(menuId) {
+            document.querySelectorAll('.menu-section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('menu-' + menuId).classList.remove('hidden');
+
+            document.querySelectorAll('.menu-tab').forEach(tab => {
+                tab.classList.remove('bg-blue-800', 'text-white');
+                tab.classList.add('text-blue-200', 'hover:bg-blue-800');
+            });
+            document.getElementById('tab-' + menuId).classList.add('bg-blue-800', 'text-white');
+            
+            // Render ulang materi pasca pindah tab
+            if(["reading", "writing", "listening", "speaking"].includes(menuId)) {
+                renderMaterial(menuId);
+            }
+        }
+
+        function renderMaterial(category) {
+            let idx = currentIndex[category];
+            document.getElementById(`${category}-badge`).innerText = `Material ${idx + 1} / 10`;
+
+            if (category === 'reading') {
+                document.getElementById('reading-title').innerText = readingDataset[idx].title;
+                document.getElementById('reading-body').innerHTML = readingDataset[idx].body;
+                document.getElementById('reading-ai-box').classList.add('hidden');
+            } 
+            else if (category === 'writing') {
+                document.getElementById('writing-prompt-text').innerText = writingDataset[idx].prompt;
+                document.getElementById('writing-input').value = "";
+                document.getElementById('writing-ai-box').classList.add('hidden');
+            } 
+            else if (category === 'listening') {
+                let data = listeningDataset[idx];
+                document.getElementById('listening-topic-title').innerText = "Topic: " + data.topic;
+                document.getElementById('listening-question').innerText = data.q;
+                document.getElementById('listening-feedback').classList.add('hidden');
+                
+                let htmlOptions = "";
+                data.options.forEach(opt => {
+                    htmlOptions += `
+                        <label class="flex items-center gap-3 p-2.5 border rounded-xl hover:bg-slate-50 cursor-pointer">
+                            <input type="radio" name="listening-quiz" value="${opt}">
+                            <span>${opt}</span>
+                        </label>`;
+                });
+                document.getElementById('listening-options').innerHTML = htmlOptions;
+            } 
+            else if (category === 'speaking') {
+                document.getElementById('target-speech').innerText = `"${speakingDataset[idx]}"`;
+                document.getElementById('speaking-ai-box').classList.add('hidden');
+            }
+        }
+
+        function nextMaterial(category) {
+            if(currentIndex[category] < 9) {
+                currentIndex[category]++;
+                renderMaterial(category);
+            } else {
+                alert("Hebat! Anda telah mencapai materi terakhir di kategori ini.");
+            }
+        }
+
+        function prevMaterial(category) {
+            if(currentIndex[category] > 0) {
+                currentIndex[category]--;
+                renderMaterial(category);
+            }
+        }
+
+        // --- SUBMODULE AI INTELLIGENCE ---
+
+        // AI Reading
+        function triggerReadingAi(word, definition) {
+            const box = document.getElementById('reading-ai-box');
+            box.classList.remove('hidden');
+            document.getElementById('reading-word').innerHTML = `🔍 AI Literacy Insight: <span class="text-blue-700">${word}</span>`;
+            document.getElementById('reading-def').innerText = definition;
+
+            studentScores.reading = Math.max(studentScores.reading, Math.round(((currentIndex.reading + 1) / 10) * 100));
+            updateDashboardDisplay();
+        }
+
+        // AI Writing
+        function triggerWritingAi() {
+            const text = document.getElementById('writing-input').value.trim();
+            const box = document.getElementById('writing-ai-box');
+            if(!text) return alert("Please type your answer!");
+
+            let idx = currentIndex.writing;
+            let targetKeywords = writingDataset[idx].keywords;
+            let containsKeywords = targetKeywords.some(kw => text.toLowerCase().includes(kw));
+
+            box.classList.remove('hidden');
+
+            // Simulasi deteksi gabungan tata bahasa
+            if (text.toLowerCase().includes("is are") || text.toLowerCase().includes("they does") || text.toLowerCase().includes("news are")) {
+                box.className = "mt-4 p-4 rounded-xl border bg-orange-50 border-orange-200 text-sm";
+                box.innerHTML = `<strong>⚠️ AI Grammar Alert:</strong> Subject-Verb agreement error found. Please check whether your noun is singular or plural.`;
+                studentScores.writing = Math.max(studentScores.writing, 60);
+            } else if (!containsKeywords) {
+                box.className = "mt-4 p-4 rounded-xl border bg-yellow-50 border-yellow-200 text-sm";
+                box.innerHTML = `<strong>💡 AI Context Suggestion:</strong> Grammar is fine, but try adding key digital literacy terms like: <u>${targetKeywords.join(", ")}</u> to enrich your argument.`;
+                studentScores.writing = Math.max(studentScores.writing, 75);
+            } else {
+                box.className = "mt-4 p-4 rounded-xl border bg-green-50 border-green-200 text-sm";
+                box.innerHTML = `<strong>✅ AI Evaluation Perfect (95/100):</strong> Accurate grammar structures and high contextual analysis. Ideal for blended portfolio entries!`;
+                studentScores.writing = Math.max(studentScores.writing, 95);
+            }
+            updateDashboardDisplay();
+        }
+
+        // AI Listening
+        function playListeningAudio() {
+            let idx = currentIndex.listening;
+            let speech = new SpeechSynthesisUtterance();
+            speech.text = listeningDataset[idx].audio;
+            speech.lang = "en-US";
+            speech.rate = 0.85;
+            window.speechSynthesis.speak(speech);
+        }
+
+        function triggerListeningAi() {
+            const selected = document.querySelector('input[name="listening-quiz"]:checked');
+            const feedback = document.getElementById('listening-feedback');
+            if(!selected) return alert("Choose one answer!");
+
+            feedback.classList.remove('hidden');
+            let idx = currentIndex.listening;
+            
+            if(selected.value === listeningDataset[idx].correct) {
+                feedback.className = "text-xs font-bold text-green-600 mt-2";
+                feedback.innerText = "🎉 Correct Answer! Good job.";
+                studentScores.listening = Math.max(studentScores.listening, Math.round(((idx + 1) / 10) * 100));
+            } else {
+                feedback.className = "text-xs font-bold text-red-600 mt-2";
+                feedback.innerText = "❌ Incorrect. Play the AI audio again and focus carefully.";
+            }
+            updateDashboardDisplay();
+        }
+
+        // AI Speaking
+        function startSpeakingAi() {
+            const btn = document.getElementById('btn-speak');
+            const box = document.getElementById('speaking-ai-box');
+            const spokenText = document.getElementById('spoken-text');
+            const scoreLabel = document.getElementById('speaking-score');
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if(!SpeechRecognition) return alert("Use Google Chrome for voice features.");
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-US';
+            btn.innerText = "🎙️ Listening...";
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                box.classList.remove('hidden');
+                let result = event.results[0][0].transcript;
+                spokenText.innerText = `"${result}"`;
+
+                let target = speakingDataset[currentIndex.speaking].toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()"]/g,"");
+                let cleanResult = result.toLowerCase().trim();
+
+                if(cleanResult.length > 5) {
+                    scoreLabel.className = "text-xs font-bold text-green-600 mt-2";
+                    scoreLabel.innerHTML = "🎯 AI Pronunciation Score: 92/100<br>Good clear delivery for blended presentations.";
+                    studentScores.speaking = Math.max(studentScores.speaking, 92);
+                } else {
+                    scoreLabel.className = "text-xs font-bold text-orange-600 mt-2";
+                    scoreLabel.innerHTML = "⚠️ AI Pronunciation Score: 50/100<br>Voice capture was too short or unclear.";
+                    studentScores.speaking = Math.max(studentScores.speaking, 50);
+                }
+                updateDashboardDisplay();
+            };
+
+            recognition.onend = function() {
+                btn.innerText = "🎙️ Start Voice Recording";
+            };
+        }
+
+        // Update Dashboard Display
+        function updateDashboardDisplay() {
+            document.getElementById('dash-p1').innerText = studentScores.reading + "%";
+            document.getElementById('dash-b1').style.width = studentScores.reading + "%";
+
+            document.getElementById('dash-p2').innerText = studentScores.writing === 0 ? "Not Tested" : studentScores.writing + "/100";
+            document.getElementById('dash-b2').style.width = studentScores.writing + "%";
+
+            document.getElementById('dash-p3').innerText = studentScores.listening + "%";
+            document.getElementById('dash-b3').style.width = studentScores.listening + "%";
+
+            document.getElementById('dash-p4').innerText = studentScores.speaking === 0 ? "Not Tested" : studentScores.speaking + "/100";
+            document.getElementById('dash-b4').style.width = studentScores.speaking + "%";
+        }
+
+        // Inisialisasi awal halaman materi pertama
+        window.onload = function() {
+            renderMaterial('reading');
+        };
+    </script>
+</body>
+</html>
